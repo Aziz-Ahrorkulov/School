@@ -1,0 +1,552 @@
+{% extends 'dashboard-admin-pages/main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+  <div class="d-flex align-items-center justify-content-between">
+    <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+      <img src="{% static 'dashboard-assets/img/logo.png' %}" alt="">
+      <span class="d-none d-lg-block">NiceAdmin</span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+  </div><!-- End Logo -->
+
+  <div class="search-bar">
+    <form class="search-form d-flex align-items-center" method="POST" action="#">
+      <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+      <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+    </form>
+  </div><!-- End Search Bar -->
+
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+
+      <li class="nav-item d-block d-lg-none">
+        <a class="nav-link nav-icon search-bar-toggle " href="#">
+          <i class="bi bi-search"></i>
+        </a>
+      </li><!-- End Search Icon-->
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+          <i class="bi bi-bell"></i>
+          <span class="badge bg-primary badge-number">4</span>
+        </a><!-- End Notification Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+          <li class="dropdown-header">
+            You have 4 new notifications
+            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="notification-item">
+            <i class="bi bi-exclamation-circle text-warning"></i>
+            <div>
+              <h4>Lorem Ipsum</h4>
+              <p>Quae dolorem earum veritatis oditseno</p>
+              <p>30 min. ago</p>
+            </div>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="notification-item">
+            <i class="bi bi-x-circle text-danger"></i>
+            <div>
+              <h4>Atque rerum nesciunt</h4>
+              <p>Quae dolorem earum veritatis oditseno</p>
+              <p>1 hr. ago</p>
+            </div>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="notification-item">
+            <i class="bi bi-check-circle text-success"></i>
+            <div>
+              <h4>Sit rerum fuga</h4>
+              <p>Quae dolorem earum veritatis oditseno</p>
+              <p>2 hrs. ago</p>
+            </div>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="notification-item">
+            <i class="bi bi-info-circle text-primary"></i>
+            <div>
+              <h4>Dicta reprehenderit</h4>
+              <p>Quae dolorem earum veritatis oditseno</p>
+              <p>4 hrs. ago</p>
+            </div>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li class="dropdown-footer">
+            <a href="#">Show all notifications</a>
+          </li>
+
+        </ul><!-- End Notification Dropdown Items -->
+
+      </li><!-- End Notification Nav -->
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+          <i class="bi bi-chat-left-text"></i>
+          <span class="badge bg-success badge-number">3</span>
+        </a><!-- End Messages Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+          <li class="dropdown-header">
+            You have 3 new messages
+            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="message-item">
+            <a href="#">
+              <img src="{% static 'dashboard-assets/img/messages-1.jpg' %}" alt="" class="rounded-circle">
+              <div>
+                <h4>Maria Hudson</h4>
+                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="message-item">
+            <a href="#">
+              <img src="{% static 'dashboard-assets/img/messages-2.jpg' %}" alt="" class="rounded-circle">
+              <div>
+                <h4>Anna Nelson</h4>
+                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                <p>6 hrs. ago</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="message-item">
+            <a href="#">
+              <img src="{% static 'dashboard-assets/img/messages-3.jpg' %}" alt="" class="rounded-circle">
+              <div>
+                <h4>David Muldon</h4>
+                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                <p>8 hrs. ago</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li class="dropdown-footer">
+            <a href="#">Show all messages</a>
+          </li>
+
+        </ul><!-- End Messages Dropdown Items -->
+
+      </li><!-- End Messages Nav -->
+
+      <li class="nav-item dropdown pe-3">
+
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <img src="{% static 'dashboard-assets/img/profile-img.jpg' %}" alt="Profile" class="rounded-circle">
+          <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+        </a><!-- End Profile Iamge Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <li class="dropdown-header">
+            <h6>Kevin Anderson</h6>
+            <span>Web Designer</span>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="{% url 'profile-dashboard' %}">
+              <i class="bi bi-person"></i>
+              <span>My Profile</span>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="{% url 'help' %}">
+              <i class="bi bi-question-circle"></i>
+              <span>Need Help?</span>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="{% url 'login' %}">
+              <i class="bi bi-box-arrow-right"></i>
+              <span>Sign Out</span>
+            </a>
+          </li>
+
+        </ul><!-- End Profile Dropdown Items -->
+      </li><!-- End Profile Nav -->
+
+    </ul>
+  </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+  
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'home-student' %}">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+  
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-book"></i></i><span>Образование</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'dairy-students' %}">
+              <i class="bi bi-circle"></i><span>Дневник</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'homework-students' %}">
+              <i class="bi bi-circle"></i><span>Домашние задание</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+  
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class='bx bxs-school'></i></i></i><span>Моя Школа</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'allclassmates-students'%}">
+              <i class="bi bi-circle"></i><span>Однокласники</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'all-students' %}">
+              <i class="bi bi-circle"></i><span>Все студенты</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'school-staff' %}">
+              <i class="bi bi-circle"></i><span>Работники Школы</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+  
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'course' %}">
+          <i class="bi bi-mortarboard"></i>
+          <span>Курсы</span>
+        </a>
+      </li><!-- End Tables Nav -->
+  
+      <li class="nav-item">
+        <a class="nav-link" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-newspaper"></i><span>Новости</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'news-ownschool' %}" >
+              <i class="bi bi-circle"></i><span>Новости про вашу школу</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'news-otherschool' %}" class="active">
+              <i class="bi bi-circle"></i><span>Новости про других школ</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Charts Nav -->
+  
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'student-profile' %}">
+          <i class="bi bi-person"></i>
+          <span>Профиль</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+  
+    </ul>
+  
+  </aside><!-- End Sidebar-->
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>News Other School</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+        <li class="breadcrumb-item active">News Other School</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row" style="display: flex;
+    gap: 50px;">
+      <!-- Left side columns -->
+      <figure class="snip1493" >
+        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample1.jpg"
+            alt="ls-sample1" /></div>
+        <figcaption>
+          <div class="date"><span class="day">28</span><span class="month">Oct</span></div>
+          <a href="#" class="news-href"></a><h3>The World Ended Yesterday</h3>
+          <p>
+
+            You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
+          </p>
+          <footer>
+            <div class="views"><i class="ion-eye"></i>2,907</div>
+            <div class="love"><i class="ion-heart"></i>623</div>
+            <div class="comments"><i class="ion-chatboxes"></i>23</div>
+          </footer>
+        </figcaption>
+      </figure>
+      <figure class="snip1493">
+        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg"
+            alt="ls-sample2" /></div>
+        <figcaption>
+          <div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+          <h3>An Abstract Post Heading</h3>
+          <p>
+
+            Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has
+            tried to contact us.
+          </p>
+          <footer>
+            <div class="views"><i class="ion-eye"></i>1,870</div>
+            <div class="love"><i class="ion-heart"></i>973</div>
+            <div class="comments"><i class="ion-chatboxes"></i>85</div>
+          </footer>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+      <figure class="snip1493">
+        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample3.jpg"
+            alt="ls-sample3" /></div>
+        <figcaption>
+          <div class="date"><span class="day">01</span><span class="month">Dec</span></div>
+          <h3>Down with this sort of thing</h3>
+          <p>
+
+            I don't need to compromise my principles, because they don't have the slightest bearing on what happens to
+            me anyway.
+          </p>
+          <footer>
+            <div class="views"><i class="ion-eye"></i>928</div>
+            <div class="love"><i class="ion-heart"></i>198</div>
+            <div class="comments"><i class="ion-chatboxes"></i>23</div>
+          </footer>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+      <figure class="snip1493">
+        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/ls-sample2.jpg"
+            alt="ls-sample2" /></div>
+        <figcaption>
+          <div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+          <h3>An Abstract Post Heading</h3>
+          <p>
+
+            Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has
+            tried to contact us.
+          </p>
+          <footer>
+            <div class="views"><i class="ion-eye"></i>1,870</div>
+            <div class="love"><i class="ion-heart"></i>973</div>
+            <div class="comments"><i class="ion-chatboxes"></i>85</div>
+          </footer>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+
+      <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+        @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+        .snip1493 {
+          font-family: 'Open Sans', Arial, sans-serif;
+          position: relative;
+          overflow: hidden;
+          margin: 10px;
+          min-width: 250px;
+          max-width: 310px;
+          width: 100%;
+          background-color: #ffffff;
+          color: #000000;
+          text-align: left;
+          font-size: 16px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .snip1493 * {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        .snip1493:after {
+          position: absolute;
+          top: 12px;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 25px 0 25px 25px;
+          border-color: transparent transparent transparent #d2652d;
+          content: '';
+          -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+          -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+        }
+
+        .snip1493 img {
+          max-width: 100%;
+          vertical-align: top;
+          position: relative;
+        }
+
+        .snip1493 figcaption {
+          padding: 20px 20px 30px;
+          background-color: #ffffff;
+        }
+
+        .snip1493 .date {
+          background-color: #d2652d;
+          top: 15px;
+          color: #fff;
+          right: 15px;
+          min-height: 48px;
+          min-width: 48px;
+          position: absolute;
+          text-align: center;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          border-radius: 50%;
+          padding: 10px 0;
+        }
+
+        .snip1493 .date span {
+          display: block;
+          line-height: 14px;
+        }
+
+        .snip1493 .date .month {
+          font-size: 11px;
+        }
+
+        .snip1493 h3,
+        .snip1493 p {
+          margin: 0;
+          padding: 0;
+        }
+
+        .snip1493 h3 {
+          margin-bottom: 10px;
+          display: inline-block;
+          font-weight: 700;
+        }
+
+        .snip1493 p {
+          font-size: 0.8em;
+          margin-bottom: 20px;
+          line-height: 1.6em;
+        }
+
+        .snip1493 footer {
+          padding: 0 25px;
+          color: #999999;
+          font-size: 0.8em;
+          line-height: 50px;
+          text-align: left;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+        }
+
+        .snip1493 footer>div {
+          display: inline-block;
+          margin-right: 15px;
+        }
+
+        .snip1493 footer i {
+          margin-right: 5px;
+          font-size: 1.2em;
+        }
+
+        .snip1493 a {
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .snip1493:hover:after,
+        .snip1493.hover:after {
+          -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+        }
+      </style>
+      <script>
+        /* Demo purposes only */
+        $(".hover").mouseleave(
+          function () {
+            $(this).removeClass("hover");
+          }
+        );
+      </script>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+{% endblock %}

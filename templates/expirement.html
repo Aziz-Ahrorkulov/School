@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        #user-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        #user-info img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profile</h1>
+    
+    <div id="user-info">
+        <img src="https://images.pexels.com/photos/15360894/pexels-photo-15360894.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" >
+        <div>
+            <h2 id="username"></h2>
+            <p id="email"></p>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript code to fetch user data and populate the HTML elements
+        
+        // Simulated user data
+        const user = {
+            username: "John Doe",
+            email: "johndoe@example.com",
+            avatar: "path_to_image"
+        };
+        
+        // Populate the HTML elements with user data
+        document.getElementById("username").textContent = user.username;
+        document.getElementById("email").textContent = user.email;
+        document.querySelector("#user-info img").src = user.avatar;
+    </script>
+</body>
+</html>
